@@ -1,0 +1,9 @@
+#PBS -N PBS_step2_union
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=20:00:00
+#PBS -S /bin/bash
+#PBS -q fat_1
+
+cd $PBS_O_WORKDIR
+source activate R.3.5
+Rscript union_sub_seurat.R ko3-ntc-all 50 0.4 /public/home/songmf/projects/sgk1_update6/ko3/KO3-union-Isnorm.RData /public/home/songmf/projects/sgk1_update6/ntc/NTC-union-Isnorm.RData scran

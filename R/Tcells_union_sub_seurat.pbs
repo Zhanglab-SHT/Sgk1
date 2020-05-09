@@ -1,0 +1,9 @@
+#PBS -N PBS_ko4_ntc
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=20:00:00
+#PBS -S /bin/bash
+#PBS -q fat_1
+
+cd $PBS_O_WORKDIR
+source activate R.3.5
+Rscript union_sub_seurat.R ko3-ntc-tcell 25 0.8 ../ko3-ntc-all_0.4_all.RData scran
